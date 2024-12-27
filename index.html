@@ -1,52 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Help Form</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 50px;
-        }
-        form {
-            max-width: 400px;
-            margin: auto;
-        }
-        label {
-            font-weight: bold;
-        }
-        input, select, button {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        button {
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #45a049;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Help Request Form</title>
+  <script>
+    // Function to generate a 16-digit random request ID
+    function generateRequestID() {
+      return Math.random().toString().slice(2, 18);
+    }
+
+    // Function to append the request ID to the hidden input field
+    function setRequestID() {
+      const requestIDInput = document.getElementById("requestID");
+      requestIDInput.value = generateRequestID();
+    }
+  </script>
 </head>
-<body>
-    <h1>Request for Help</h1>
-    <form action="send_email.php" method="POST">
-        <label for="subject">Subject in which help is needed:</label>
-        <input type="text" id="subject" name="subject" placeholder="Enter the subject" required>
-        
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" placeholder="Enter your name" required>
-        
-        <label for="telephone">Telephone Number:</label>
-        <input type="tel" id="telephone" name="telephone" placeholder="Enter your phone number" required>
-        
-        <button type="submit">Submit</button>
-    </form>
+<body onload="setRequestID()">
+  <h1>Request Help</h1>
+  <form
+    action="https://docs.google.com/forms/d/YOUR_GOOGLE_FORM_ID/formResponse"
+    method="post"
+    target="_blank"
+  >
+    <label for="subject">Subject in which help is needed:</label><br>
+    <input type="text" id="subject" name="entry.XXXXXXX" required><br><br>
+
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="entry.YYYYYYY" required><br><br>
+
+    <label for="phone">Telephone Number:</label><br>
+    <input type="tel" id="phone" name="entry.ZZZZZZZ" required><br><br>
+
+    <!-- Hidden field for the request ID -->
+    <input type="hidden" id="requestID" name="entry.WWWWWWW" value="">
+
+    <button type="submit">Submit</button>
+  </form>
 </body>
 </html>
