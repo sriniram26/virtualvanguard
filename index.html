@@ -3,38 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Help Request Form</title>
+    <title>Embedded Google Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f9f9f9;
+        }
+        iframe {
+            border: none;
+        }
+    </style>
 </head>
 <body>
-    <h1>Request Help</h1>
-    <form action="https://docs.google.com/forms/d/e/1FAIpQLSfZAJLDjxbDxUz9JQi9/formResponse" method="POST" target="_blank">
-        <!-- Email -->
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" name="entry.XXXXXXX" required><br><br>
-        
-        <!-- Name -->
-        <label for="name">Name:</label><br>
-        <input type="text" id="name" name="entry.YYYYYYY" required><br><br>
-        
-        <!-- Zoom ID -->
-        <label for="zoom-id">Zoom ID:</label><br>
-        <input type="text" id="zoom-id" name="entry.ZZZZZZZ" required><br><br>
-        
-        <!-- Phone Number -->
-        <label for="phone">Phone Number:</label><br>
-        <input type="tel" id="phone" name="entry.AAAAAAA" required><br><br>
-        
-        <!-- Subject Dropdown -->
-        <label for="subject">Which subject do you need help with?</label><br>
-        <select id="subject" name="entry.BBBBBBB" required>
-            <option value="Physics">Physics</option>
-            <option value="Chemistry">Chemistry</option>
-            <option value="Math">Math</option>
-            <option value="English">English</option>
-        </select><br><br>
-        
-        <!-- Submit Button -->
-        <button type="submit">Submit</button>
-    </form>
+    <iframe 
+        src="https://docs.google.com/forms/d/e/1FAIpQLSdeaNiVzYQEs12uRs30qQfvXX8kvygWVsbMAJTjB8kgqilbAw/viewform?embedded=true" 
+        width="640" 
+        height="1262" 
+        frameborder="0" 
+        marginheight="0" 
+        marginwidth="0">
+        Loading…
+    </iframe>
 </body>
 </html>
