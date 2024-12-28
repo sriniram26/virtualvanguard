@@ -1,42 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Help Request Form</title>
-  <script>
-    // Function to generate a 16-digit random request ID
-    function generateRequestID() {
-      return Math.random().toString().slice(2, 18);
-    }
-
-    // Function to append the request ID to the hidden input field
-    function setRequestID() {
-      const requestIDInput = document.getElementById("requestID");
-      requestIDInput.value = generateRequestID();
-    }
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help Request Form</title>
 </head>
-<body onload="setRequestID()">
-  <h1>Request Help</h1>
-  <form
-    action="https://docs.google.com/forms/d/YOUR_GOOGLE_FORM_ID/formResponse"
-    method="post"
-    target="_blank"
-  >
-    <label for="subject">Subject in which help is needed:</label><br>
-    <input type="text" id="subject" name="entry.XXXXXXX" required><br><br>
-
-    <label for="name">Name:</label><br>
-    <input type="text" id="name" name="entry.YYYYYYY" required><br><br>
-
-    <label for="phone">Telephone Number:</label><br>
-    <input type="tel" id="phone" name="entry.ZZZZZZZ" required><br><br>
-
-    <!-- Hidden field for the request ID -->
-    <input type="hidden" id="requestID" name="entry.WWWWWWW" value="">
-
-    <button type="submit">Submit</button>
-  </form>
+<body>
+    <h1>Request Help</h1>
+    <form action="https://docs.google.com/forms/d/e/1FAIpQLSfZAJLDjxbDxUz9JQi9/formResponse" method="POST" target="_blank">
+        <!-- Email -->
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="entry.XXXXXXX" required><br><br>
+        
+        <!-- Name -->
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="entry.YYYYYYY" required><br><br>
+        
+        <!-- Zoom ID -->
+        <label for="zoom-id">Zoom ID:</label><br>
+        <input type="text" id="zoom-id" name="entry.ZZZZZZZ" required><br><br>
+        
+        <!-- Phone Number -->
+        <label for="phone">Phone Number:</label><br>
+        <input type="tel" id="phone" name="entry.AAAAAAA" required><br><br>
+        
+        <!-- Subject Dropdown -->
+        <label for="subject">Which subject do you need help with?</label><br>
+        <select id="subject" name="entry.BBBBBBB" required>
+            <option value="Physics">Physics</option>
+            <option value="Chemistry">Chemistry</option>
+            <option value="Math">Math</option>
+            <option value="English">English</option>
+        </select><br><br>
+        
+        <!-- Submit Button -->
+        <button type="submit">Submit</button>
+    </form>
 </body>
 </html>
